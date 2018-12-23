@@ -1,12 +1,5 @@
-
-library(readr)
-library(tidyverse)
-
-shots_2017_2017 <- read_csv("~/powerplay/shots_2007-2017.csv")
-shots_2018 <- read_csv("~/powerplay/shots_2018.csv")
-
-model_data <- 
-  shots_2017_2017 %>% 
+test_data <- 
+  shots_2018 %>% 
   mutate(
     homeSkaters = case_when(
       homeSkatersOnIce > 6 ~ 6,
@@ -70,12 +63,14 @@ model_data <-
          shotRebound,
          shotRush,
          strengthState,
-         scoreStrength) %>% 
+         scoreStrength,
+         xGoal) %>% 
   filter(
     strengthState != "3v6",
     strengthState != "6v3",  
     strengthState != "6v6" 
-      )
+  )
 
-xg_model <- glm(goal ~ ., family = binomial, data = model_data)
-summary(xg_model)
+
+preds <- predict(xg_model, test_data, type="response")
+pred_data <- cbind(test_data, preds)
