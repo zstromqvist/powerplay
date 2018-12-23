@@ -74,3 +74,7 @@ test_data <-
 
 preds <- predict(xg_model, test_data, type="response")
 pred_data <- cbind(test_data, preds)
+
+pred <- prediction(pred_data$preds, pred_data$goal)
+perf <- performance(pred, measure = "auc")
+perf@y.values[[1]]

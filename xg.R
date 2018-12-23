@@ -1,6 +1,7 @@
 
 library(readr)
 library(tidyverse)
+library(ROCR)
 
 shots_2017_2017 <- read_csv("~/powerplay/shots_2007-2017.csv")
 shots_2018 <- read_csv("~/powerplay/shots_2018.csv")
