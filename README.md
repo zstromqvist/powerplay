@@ -4,7 +4,7 @@ hockey analysis mainly for NHL and maybe some SHL. Blog posts about the developm
 
 ### what to do
 
-- [ ] xg model MVP
+- [x] xg model MVP
 - [ ] create scrapers
 - [ ] enhance xg model
 - [ ] create pp model
