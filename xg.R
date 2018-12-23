@@ -2,12 +2,13 @@
 library(readr)
 library(tidyverse)
 library(ROCR)
+library(caret)
 
-shots_2017_2017 <- read_csv("~/powerplay/shots_2007-2017.csv")
+shots_2007_2017 <- read_csv("~/powerplay/shots_2007-2017.csv")
 shots_2018 <- read_csv("~/powerplay/shots_2018.csv")
 
 model_data <- 
-  shots_2017_2017 %>% 
+  shots_2007_2017 %>% 
   mutate(
     homeSkaters = case_when(
       homeSkatersOnIce > 6 ~ 6,

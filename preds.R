@@ -78,3 +78,6 @@ pred_data <- cbind(test_data, preds)
 pred <- prediction(pred_data$preds, pred_data$goal)
 perf <- performance(pred, measure = "auc")
 perf@y.values[[1]]
+
+
+var_imp <- varImp(xg_model)
