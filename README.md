@@ -9,3 +9,5 @@ hockey analysis mainly for NHL and maybe some SHL. Blog posts about the developm
 - [ ] enhance xg model
 - [ ] create pp model
 - [ ] do rankings current season
+- [ ] player similarity model
+- [ ] create db structure
